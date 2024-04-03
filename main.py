@@ -1,4 +1,5 @@
 import asyncio
+import platform
 from kasa import SmartPlug
 from dotenv import dotenv_values
 
@@ -26,8 +27,12 @@ async def main():
   return 0
 
 if __name__ == "__main__":
-  # Work around for Windows Asyncio Error RuntimeError: Event loop is closed
-  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) # Remove this line for MacOS
+  system = platform.system()
+
+  # Work around for Windows Asyncio Error 'RuntimeError: Event loop is closed'
+  if platform.system() == "Windows":
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
   loop = asyncio.run(main())
   print(f"Exiting with status code {loop}")
   
