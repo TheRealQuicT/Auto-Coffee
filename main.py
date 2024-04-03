@@ -27,8 +27,6 @@ async def main():
   return 0
 
 if __name__ == "__main__":
-  system = platform.system()
-
   # Work around for Windows Asyncio Error 'RuntimeError: Event loop is closed'
   if platform.system() == "Windows":
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
