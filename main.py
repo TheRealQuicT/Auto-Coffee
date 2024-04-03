@@ -27,7 +27,7 @@ async def main():
 
 if __name__ == "__main__":
   # Work around for Windows Asyncio Error RuntimeError: Event loop is closed
-  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) # Remove this line for MacOS
   loop = asyncio.run(main())
   print(f"Exiting with status code {loop}")
   
