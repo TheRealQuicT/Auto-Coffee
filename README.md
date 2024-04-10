@@ -2,6 +2,16 @@
 
 This Repository is used as a Auto brew for my morning coffee. Using python-kasa I am controling my TP-Link plug to turn on 10 minutes before my alarm, brewing myself a fresh pot of coffee ready for me every morning before I wake up.
 
-To get started, install the requirments using `pip install -r requirements.txt`
+> [!WARNING]
+> These instructions are currenlty only for Mac users. I have only tested this on MacOS Sonoma 14.4.1
 
-Copy the `.env.example` file and fill in your information. Don't forget to change the file name from `.env.example` to `.env`
+<br>
+
+# **Python Version and dependencies**
+
+To get started, make sure that you have a version of python 3.10 or higher. To do this, in your terminal type `python --version` or `python3 --version`
+
+After, ensure that you have the required python-kasa package installed. If you do not, you can install it using `pip install -r path/to/requirements.txt` or `pip3 install -r path/to/requirements.txt`
+
+
+
