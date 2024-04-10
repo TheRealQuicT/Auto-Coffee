@@ -61,7 +61,7 @@ To check if you have done this properly you can type `pmset -g sched` it should 
 > [!NOTE]
 > **If you want to remove your `pmset` type this command in the terminal `pmset repeat cancel`**
 
-Finally, we need to load the `.plist` file. For this part, I suggest using [LaunchControl](https://www.macupdate.com/app/mac/46921/launchcontrol) you can download it at the link or through the Appstore. If you are using LaunchControl all you need to do is select the `Global Daemon` checkbox, find your `.plist` file and click on it, then click on this button<picture><img alt="circle with an arrow in it pointing up." src="https://github.com/TheRealQuicT/TheRealQuicT/blob/main/circle-arrow.png"></picture> located at the top center of the window and your done.
+Finally, we need to load the `.plist` file. For this part, I suggest using [LaunchControl](https://www.macupdate.com/app/mac/46921/launchcontrol) you can download it at the link or through the Appstore. If you are using LaunchControl all you need to do is select the `Global Daemon` checkbox, find your `.plist` file and click on it, then click on this button<picture><img alt="circle with an arrow in it pointing up." src="https://github.com/TheRealQuicT/TheRealQuicT/blob/main/Pictures/circle-arrow.png"></picture> located at the top center of the window and your done.
 
 If you want to do it using the terminal you are gonna need to get to your `root user`, to do this type `sudo zsh` then input your password. From there you are gonna type `launchctl load /path/to/your/.plist` replace `/path/to/your/.plist` with your path. To see if you have successfully loaded your `.plist` type in the terminal `launchctl list` and scroll through until you find the name of your `.plist` file.
 
