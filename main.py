@@ -23,10 +23,14 @@ async def controls() -> None:
 
   if plug.is_on:
     await plug.turn_off()
+    # Do not put leading 0's 
+    # example (08,50)
     schedule_wake_event(8,50) # <-- Adjust Start time here
     print(f"{alias} has been turned off.")
   else:
     await plug.turn_on()
+    # Do not put leading 0's 
+    # example (09,30)
     schedule_wake_event(9,30) # <-- Adjust End time here
     print(f"{alias} has been turned on.")
 
