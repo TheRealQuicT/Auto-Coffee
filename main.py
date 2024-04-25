@@ -8,13 +8,25 @@ from kasa import SmartPlug
 # <-- Enter your SmartPlug IP address -->
 config = '255.255.255.255'
 
-# Sets the start and end wake time.
-def schedule_wake_event(hour, minute) -> None:
+
+def schedule_wake_event(hour: int, minute: int) -> None:
+  """
+  Sets the start/end wake time using pmset.
+
+  Args:
+      hour: int
+      minute: int
+  """
+
   command = f"sudo pmset repeat wake MTWRFSU {hour}:{minute}:00"
   subprocess.run(command, shell=True)
 
-# Controls the on/off functionality of SmartPlug
+
 async def controls() -> None:
+  """
+  Controls the on/off functionality of the SmartPlug.
+  """
+
   plug = SmartPlug(config)
 
   await plug.update()
@@ -34,8 +46,15 @@ async def controls() -> None:
     schedule_wake_event(9,30) # <-- Adjust End time here
     print(f"{alias} has been turned on.")
 
-# Main Function Logic
+
 async def main() -> int:
+  """
+  Main Function Logic
+
+  Returns:
+      int: Exit code
+  """
+
   try:
     await controls()
   except Exception as e:
